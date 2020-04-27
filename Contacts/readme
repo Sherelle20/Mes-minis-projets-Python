@@ -1,0 +1,26 @@
+Rell'Contact est un annuaire telephonique vous permettant de creer vos contacts de 
+les modifier et aussi de les
+supprimer.
+
+***Comment utiliser Rell'contacts***
+
+Structure:
+    code.py qui contient les fonctions utilisees
+    main.py qui contient le menu 
+    fichier_contacts sera cree au lancement du programme et contient vos contacts nom et numero
+    fichier_numero sera egalement cree au lancement du programme et contient les numeros de vos contacts
+    meme ceux qui seront supprimer une sorte d'historique au cas ou :-)
+
+
+Prerequis: 
+
+    Avoir python3 au mininum dans sa machine
+    Avoir un editeur de text
+
+Comment lancer l'annuaire:
+
+    Ouvrir votre terminal dans le dossier Rell'Contacts
+    Puis taper << python main.py>>
+
+
+                              --copyrigth rellcontact 2020--
