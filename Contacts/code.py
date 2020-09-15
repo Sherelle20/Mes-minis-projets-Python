@@ -23,6 +23,7 @@ def ajouter_contact(nom, numero):#done
             print("Bien enreigistre!")
     else:
         raise ValueError("Le contact existe deja!!!")
+        exit()
     
 
 def modifier_nom(numero, nouveau_nom): #done
@@ -56,14 +57,16 @@ def supprimer_contact(numero_contact): #done done
         #print("Contact bien supprime!!!")
     else:
         raise ValueError("Ce numero n'exite pas")
+        exit()
 
 def afficher_repertoir():#done done
     "afficher tous les contacts "
     with open("fichier_contacts","r") as fichier_contacts:
-        fichier_contacts.seek(0) #on verifie si nous sommes ai debut du fichier
+        #fichier_contacts.seek(0) #on verifie si nous sommes au debut du fichier
         first_char = fichier_contacts.read(1) #on recupere le premier caratere
         if not first_char:
             print("Vous n'avez encore aucun contact")
+            exit()
         else:
             for line in fichier_contacts:
                 print(line)

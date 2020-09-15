@@ -52,4 +52,5 @@ if val=="o":
 
 else:
     print("ok")
+    exit()
 
