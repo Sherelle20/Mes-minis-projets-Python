@@ -1,0 +1,45 @@
+{% extends "market/base.html" %}
+{% load static%}
+
+{% block body_block %}
+
+<h2>Please Register for Buy!!!</h2>
+<!--Body-->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-4"><img src="{% static 'market/img/login.png'%}" alt="LOGIN IMAGE" style="width: 75%"></div>
+        <div class="col-lg-4">
+            <form action="{% url 'register' %}" method="POST"   enctype="multipart/form-data">
+                {% csrf_token%}
+            <div class="form-group">
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                    
+                   <input type="text" class="form-control" name = "username" placeholder="Enter our name" required>
+                </div><br>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                    <input type="text" class="form-control" name = "phone" placeholder="Enter our phone number +237" required>
+                </div><br>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                    <input type="text" class="form-control" name = "address" placeholder="Enter our adress" required>
+                </div><br>
+                <div class="input-group">
+                    <span class="input-group-addon"><i>@</i></span>
+                    <input type="email" class="form-control" name = "email" placeholder="Email@.com" required>
+                </div><br>
+                <div class="input-group">
+                    <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                    <input type="password" class="form-control" name = "password" placeholder="password" required>
+                    <small class="form-text text-muted">The password should at least 8 characters and contain letter and number</small>
+                </div><br>
+                <button type="submit" class="btn btn-primary btn btn-outline-info" title="sing-in">SingUp</button>
+            </div>
+           </form>
+        </div>
+        <div class="col-lg-4"></div>
+        <div class="col-lg-4"></div>
+    </div>
+</div><br><br><br>
+{% endblock %}

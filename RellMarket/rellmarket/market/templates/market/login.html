@@ -1,0 +1,18 @@
+{% extends "market/base.html" %}
+{% load static%}
+{% block body_block %}
+
+<form action="{% url 'page_membre' %}" method="POST">
+    {% csrf_token %}
+    <div class="modal-body form-group">
+        Email <input type="email" name="email" id="" class="form-control"><br>
+        <!--Password <input type="password" name="password" id="" class="form-control"><br>-->
+    </div>
+    <div class="modal-footer">
+        <a href="#">SingUp for free</a>
+        <input type="submit" class="btn btn-primary" data-dismiss="modal" value="Submit">
+    </div>
+</div>
+</form>
+
+{%endblock%}

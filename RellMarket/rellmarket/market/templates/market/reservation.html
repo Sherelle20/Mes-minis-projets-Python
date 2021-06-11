@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Page Reservation</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link rel="stylesheet" href="index.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>  
+</head>
+<body>
+    <!--header-->
+    <nav class="navbar navbar-inverse" style="position: fixed; z-index: 1; width: 100%;">
+        <div class="container">
+            <div class="navbar-header">
+                <a class="navbar-brand glyphicon glyphicon-shopping-cart" href="#">
+                    Rell'Market
+                </a>
+            </div>
+            <div class="collapse navbar-collapse" id="myNavbar">
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-user">
+
+                            </span> 
+                            Sign Up
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <span class="glyphicon glyphicon-log-in">
+
+                            </span> 
+                            Login
+                        </a>
+                    </li>
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li>
+                        <a href="#">
+                            PRODUCTS
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            CATEGORIES
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            ABOUT US
+                        </a>
+                    </li>
+                </ul>
+          </div>
+        </div>
+    </nav><hr><br><br><br> 
+
+<!--Body-->
+<body>
+    <div class="container center">
+        <div class="row">
+            <div class="col-lg-6">
+                <img src="images/logo.png" style="width:65%;">
+            </div>
+            <div class="col-lg-6">
+                <h4 class="text-uppercase">
+                    chocolat cake
+                </h4><br><br>
+                <form class="form-group">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input type="text" class="form-control" placeholder="Enter our Name" required>
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                        <input type="text" class="form-control" placeholder="Number..." required>
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                        <input class="form-control" placeholder="adresse.." required>
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i>Delivery Date</span>
+                        <input class="form-control" type="datetime-local" required>
+                        <small class="form-text text-muted">The date should be more than the of today</small>
+                    </div><br>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-list-alt"></i></span>
+                        <textarea class="form-control" placeholder="other informations..." required></textarea>
+                    </div><br>
+                    <button type="submit" class="btn btn-primary" title="Reserved">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,136 @@
+{% extends "market/base.html" %}
+{% load static%}
+{% block body_block %}
+<!--Body-->  
+
+<style>
+    .notification {
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  padding: 5px 9px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover {
+  background: rgb(163, 36, 125);
+}
+
+.notification .badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 5px 5px;
+  border-radius: 25%;
+  background: rgb(93, 140, 226);
+  color: white;
+}
+.panel-heading > a{
+    text-decoration: none;
+}
+</style>
+<!-- block1 -->
+
+<div class="container" style="margin-top: 64px;">
+    <div class="row">
+        {% for produit in produits %}
+        <div class="col-sm-3">
+            <div class="panel panel-info">
+                <a href="{% url 'learnmore' produit.pk %}" name="more" style="text-decoration:none;">
+                <div class="panel-heading text-center">
+                    {{produit.nom}}
+                </div>
+                <div class="panel-body">
+                    <img src="{% static 'market/img/image5.jpeg''%}" class="img-responsive" style="width:25% center" alt="Image">
+                </div>
+                <div class="panel-footer text-center">
+                        <a href="{%url 'liker' produit.pk %}" class="notification"><i class="fa fa-heart" aria-hidden="true" title="like"><span class="badge">{{produit.like_number}}</span></i></a>
+                        <a href="#" class="notification"><i class="fa fa-shopping-cart" aria-hidden="true" title="buy"></i></a>
+                        <i class="" aria-hidden="true" title="like">{{produit.base_price}}fcfa</i>
+                </div>
+            </div>
+            </a>
+        </div>
+        {% endfor%}
+        <div>
+            <p class="text-uppercase" style="font-weight:bold; font-size: 1.2em">cart</p><br>
+            <ul id="myUL">
+                {% for p in produit_search %}
+                <li><a href="{% url 'learnmore' p.pk %}" style="text-decoration:none;">{{p.nom}}</a></li>
+
+                {% endfor%}
+            </ul>
+        </div>
+                <br><br>
+            <p class="text-uppercase" style="font-weight:bold; font-size: 1.2em">price filter</p><br>
+            <form class="form-inline" method="POST" action="{% url 'home' %}" >
+                    {% csrf_token%}
+                <div class="form-group">
+                    <input type="text" class="form-control" id="" placeholder="Add your Price" name="price">
+                </div>
+                <button type="submit" class="btn btn-info">Filter</button>
+            </form><br>
+            <div class="col-sm-3">
+        </div>
+    </div><br>
+</div>
+
+<!-- block2 -->
+<div class="container">
+    <div class="row">
+        {% for pro in produits %}
+        <div class="col-sm-3">
+            <div class="panel panel-info">
+                <a href="{% url 'learnmore' pro.pk %}" name="more" style="text-decoration:none;">
+                <div class="panel-heading text-center">
+                    {{pro.nom}}
+                </div>
+                <div class="panel-body">
+                    <img src="{% static 'market/img/image5.jpeg'%}" class="img-responsive" style="width:25% center" alt="Image">
+                </div>
+                <div class="panel-footer text-center">
+                    <a href="{%url 'liker' pro.pk %}" class="notification"><i class="fa fa-heart" aria-hidden="true" title="like"><span class="badge">{{pro.like_number}}</span></i></a>
+                    <a href="#" class="notification"><i  class="fa fa-shopping-cart" aria-hidden="true" title="buy"></i></a>
+                    <i class="" aria-hidden="true" title="like">{{pro.base_price}}fcfa</i>
+                </div>
+            </div>
+            </a>
+        </div>
+        {% endfor %}
+        
+        <p class="text-uppercase" style="font-weight:bold; font-size: 1.2em">popular products</p>
+        {%for popular in popular_product%}
+        <a href = "{% url 'learnmore' popular.pk %}" style="text-decoration:none;">
+            <img src="{% static 'market/img/image5.jpeg'%}" alt="image" style="width:60px;">
+            <small>{{popular.nom}}, {{popular.base_price}}fcfa</small>
+        </a><br><br>
+        {%endfor%}
+        {% if not var %}
+        <em style="font-weight:bold">No Product</em>
+        {% endif %}
+        
+    </div>
+    </div>
+<div><br><br><br>
+
+<script>
+            function myFunction() {
+                var input, filter, ul, li, a, i, txtValue;
+                input = document.getElementById("myInput");
+                filter = input.value.toUpperCase();
+                ul = document.getElementById("myUL");
+                li = ul.getElementsByTagName("li");
+                for (i = 0; i < li.length; i++) {
+                    a = li[i].getElementsByTagName("a")[0];
+                    txtValue = a.textContent || a.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        li[i].style.display = "";
+                    } else {
+                        li[i].style.display = "none";
+                    }
+                }
+            }
+</script>
+{%endblock%}

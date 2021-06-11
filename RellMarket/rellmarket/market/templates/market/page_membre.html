@@ -1,0 +1,33 @@
+{% extends "market/base.html" %}
+{% load static%}
+
+{% block body_block %}
+<div class="container-fluid">
+    <div class="row content">
+      <div class="col-sm-3">
+      <h4>{{user.name}}</h4><br><br>
+        <ul class="nav nav-pills nav-stacked">
+        
+        <li class=""><a href="{% url 'home' %}">Buy</a></li>
+        <li class=""><a href="#">My Products</a></li>
+        <li class=""><a href="#">
+          <span class="glyphicon glyphicon-user">
+
+          </span> 
+          Settings</a></li>
+        <li class=""><a href="{% url 'home' %}">
+            <span class="glyphicon glyphicon-user">
+  
+            </span> 
+            Disconnecte</a></li>
+        
+        </ul><br>
+      </div>
+      <div class = "col-sm-3">
+       {% for p in produits%}
+       <p>{{p.name}}</p>
+       {% endfor %}
+      </div>
+      </div>
+      </div>
+{%endblock%}

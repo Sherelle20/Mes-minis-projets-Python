@@ -1,0 +1,34 @@
+/*header style*/
+.navbar-inverse .navbar-brand {
+  color: #990099;
+}
+.navbar-inverse  {
+  background-color:white!important;
+  border-color:white;
+  
+}
+.navbar-inverse .navbar-nav>li>a:link {
+  color: #990099;
+}
+
+.navbar-inverse .navbar-nav>li>a:visited {
+  color: #990099;
+}
+
+.navbar-inverse .navbar-nav>li>a:hover {
+  color:#3399ff;
+}
+
+.navbar-inverse .navbar-nav>li>a:active {
+  color: blue;
+}
+
+/*footer style*/
+
+/*ligne verticale <span class="vertical-line"></span>*/
+.vertical-line{
+  border-left: 2px solid #000;
+  display: inline-block;
+  height: 130px;
+  margin: 0 20px;
+}

@@ -1,0 +1,63 @@
+{% extends "market/base.html" %}
+{% load static%}
+{% block body_block %}
+
+<style>
+    .notification {
+  background-color: #555;
+  color: white;
+  text-decoration: none;
+  padding: 5px 9px;
+  position: relative;
+  display: inline-block;
+  border-radius: 2px;
+}
+
+.notification:hover {
+  background: rgb(163, 36, 125);
+}
+
+.notification .badge {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  padding: 5px 5px;
+  border-radius: 25%;
+  background: rgb(93, 140, 226);
+  color: white;
+}
+.panel-heading > a{
+    text-decoration: none;
+}
+</style>
+
+<!--Body-->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <img src="images/logo.png" style="width:65%">
+        </div>
+        <div class="col-sm-6">
+            <h4 class="text-uppercase">
+                {{produit.nom}}
+            </h4><br>
+            <p>
+                {{produit.description}}
+            </p>
+            <div class="navbar ">
+                <div class="container text-center">
+                    <div class="collapse navbar-collapse">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#"><i class="fa fa-money" aria-hidden="true">Price: {{produit.base_price}}</i></a></li>
+                            <li><a href="{%url 'liker' produit.pk %}" class="notification" title="Like"><i class="fa fa-heart" aria-hidden="true">
+                                <span class="badge">{{produit.like_number}}</span>
+                            </i></a></li>
+                            <li><a href="#" title="Buy"><i class="fa fa-shopping-cart" aria-hidden="true" ></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
